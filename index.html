@@ -1,0 +1,44 @@
+<script>
+
+// Recursion Problems 
+
+
+function reverseString(strToReverse)
+{
+  if (strToReverse.length <= 1)
+    return strToReverse;
+
+  // last char +
+  // 0 .. second-last-char, reversed
+  return strToReverse[strToReverse.length - 1] +
+    reverseString( strToReverse.substring(0, strToReverse.length - 1) );
+}
+
+reverseString('nitin')
+
+//
+
+function power(x , n ) {
+
+temp = 1
+if(n==1) {
+  return x
+}
+
+// Even Number Powers
+if ( n%2 == 0) {
+temp = power(x , n/2)
+return (temp * temp )
+}
+
+//odd Number Powers
+else {
+  temp = power(x , parseInt(n/2) )
+  return  ( x * (temp * temp) )
+}
+}
+
+
+power(2,5);
+power(2,8);
+</script>
